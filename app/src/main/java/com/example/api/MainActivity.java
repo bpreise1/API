@@ -6,8 +6,10 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -41,5 +43,14 @@ public class MainActivity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
 
         }
+    }
+
+    @Override
+    public void onActivityResult(int resultCode, int requestCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Bundle extras = data.getExtras();
+        Bitmap bitmap = (Bitmap) extras.get("data");
+        binding.imageView.setImageBitmap(bitmap);
     }
 }
