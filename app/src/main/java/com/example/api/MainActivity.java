@@ -34,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
                 requestCamera();
             }
         });
+
+        binding.rotateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.imageView.setRotation(binding.imageView.getRotation() + 45);
+            }
+        });
     }
 
     public void requestCamera() {
