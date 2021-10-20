@@ -26,7 +26,12 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        requestCamera();
+        binding.cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requestCamera();
+            }
+        });
     }
 
     public void requestCamera() {
