@@ -28,14 +28,14 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        binding.cameraButton.setOnClickListener(new View.OnClickListener() {
+        binding.cameraButton.setOnClickListener(new View.OnClickListener() {//logic for camera access
             @Override
             public void onClick(View view) {
                 requestCamera();
             }
         });
 
-        binding.rotateButton.setOnClickListener(new View.OnClickListener() {
+        binding.rotateButton.setOnClickListener(new View.OnClickListener() {//logic for rotation
             @Override
             public void onClick(View view) {
                 binding.imageView.setRotation(binding.imageView.getRotation() + 45);
@@ -43,17 +43,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void requestCamera() {
+    public void requestCamera() {//get camera from device
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         try {
             startActivityForResult(intent, 1);
         } catch (ActivityNotFoundException e) {
-
+            
         }
     }
 
     @Override
-    public void onActivityResult(int resultCode, int requestCode, Intent data) {
+    public void onActivityResult(int resultCode, int requestCode, Intent data) {//show picture on screen
         super.onActivityResult(requestCode, resultCode, data);
 
         Bundle extras = data.getExtras();
