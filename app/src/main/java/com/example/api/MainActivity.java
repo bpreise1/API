@@ -10,21 +10,25 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 
 import com.example.api.databinding.ActivityMainBinding;
+import com.example.api.databinding.ImageEditBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    ImageEditBinding imageEditBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        imageEditBinding = ImageEditBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
@@ -35,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        binding.rotateButton.setOnClickListener(new View.OnClickListener() {//logic for rotation
+        imageEditBinding.rotateButton.setOnClickListener(new View.OnClickListener() {//logic for rotation
             @Override
             public void onClick(View view) {
-                binding.imageView.setRotation(binding.imageView.getRotation() + 45);
+                imageEditBinding.imageView2.setRotation(imageEditBinding.imageView2.getRotation() + 45);
             }
         });
     }
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         Bundle extras = data.getExtras();
         Bitmap bitmap = (Bitmap) extras.get("data");
-        binding.imageView.setImageBitmap(bitmap);
+
+        imageEditBinding.imageView2.setImageBitmap(bitmap);
+        setContentView(imageEditBinding.getRoot());
     }
 }
