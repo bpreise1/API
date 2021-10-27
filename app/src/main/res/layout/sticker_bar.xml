@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/bearcatButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/bearcat"/>
+
+    <ImageButton
+        android:id="@+id/coolButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/cool"/>
+
+    <ImageButton
+        android:id="@+id/sharinganButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/sharingan"/>
+
+</LinearLayout>
