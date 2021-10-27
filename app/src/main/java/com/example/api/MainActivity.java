@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     ImageEditBinding imageEditBinding;
-    StickerBarBinding stickerBarBinding;
     boolean drawBearcat;
     boolean drawCool;
     boolean drawSharingan;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         imageEditBinding = ImageEditBinding.inflate(getLayoutInflater());
-        stickerBarBinding = StickerBarBinding.inflate(getLayoutInflater());
         drawBearcat = false;
         drawCool = false;
         drawSharingan = false;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        stickerBarBinding.bearcatButton.setOnClickListener(new View.OnClickListener() {
+        imageEditBinding.stickerBar.bearcatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("PENISPENIS");
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        stickerBarBinding.coolButton.setOnClickListener(new View.OnClickListener() {
+        imageEditBinding.stickerBar.coolButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(drawCool) {
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        stickerBarBinding.sharinganButton.setOnClickListener(new View.OnClickListener() {
+        imageEditBinding.stickerBar.sharinganButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(drawSharingan) {
