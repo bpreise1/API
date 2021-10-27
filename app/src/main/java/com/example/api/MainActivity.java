@@ -22,12 +22,16 @@ import android.widget.LinearLayout;
 
 import com.example.api.databinding.ActivityMainBinding;
 import com.example.api.databinding.ImageEditBinding;
+import com.example.api.databinding.StickerBarBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     ImageEditBinding imageEditBinding;
+    StickerBarBinding stickerBarBinding;
     boolean drawBearcat;
+    boolean drawCool;
+    boolean drawSharingan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         imageEditBinding = ImageEditBinding.inflate(getLayoutInflater());
+        stickerBarBinding = StickerBarBinding.inflate(getLayoutInflater());
         drawBearcat = false;
+        drawCool = false;
+        drawSharingan = false;
         View view = binding.getRoot();
         setContentView(view);
 
@@ -53,14 +60,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        imageEditBinding.bearcatButton.setOnClickListener(new View.OnClickListener() {
+        stickerBarBinding.bearcatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("PENISPENIS");
                 if(drawBearcat) {
                     drawBearcat = false;
                 }
                 else {
                     drawBearcat = true;
+                    drawCool = false;
+                    drawSharingan = false;
+                }
+            }
+        });
+
+        stickerBarBinding.coolButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(drawCool) {
+                    drawCool = false;
+                }
+                else {
+                    drawBearcat = false;
+                    drawCool = true;
+                    drawSharingan = false;
+                }
+            }
+        });
+
+        stickerBarBinding.sharinganButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(drawSharingan) {
+                    drawSharingan = false;
+                }
+                else {
+                    drawBearcat = false;
+                    drawCool = false;
+                    drawSharingan = true;
                 }
             }
         });
@@ -79,12 +117,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void drawImage(float x, float y) {
-        if(drawBearcat) {
+        if(drawBearcat || drawCool || drawSharingan) {
+            System.out.println("DRAW");
             ImageView imageView = new ImageView(this);
             ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(50, 50);
 
+            if(drawBearcat) {
+                imageView.setImageResource(R.drawable.bearcat);
+            }
+            else if(drawCool) {
+                imageView.setImageResource(R.drawable.cool);
+            }
+            else if(drawSharingan) {
+                imageView.setImageResource(R.drawable.sharingan);
+            }
+
             imageView.setLayoutParams(layoutParams);
-            imageView.setImageResource(R.drawable.bearcat);
             imageView.setX(x);
             imageView.setY(y);
 
