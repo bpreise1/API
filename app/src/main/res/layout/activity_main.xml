@@ -31,16 +31,4 @@
         app:layout_constraintVertical_bias="0.121"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="256dp"
-        android:layout_height="273dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cameraButton"
-        app:layout_constraintVertical_bias="0.217"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

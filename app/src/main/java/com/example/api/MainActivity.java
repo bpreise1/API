@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         imageEditBinding.stickerBar.bearcatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("PENISPENIS");
                 if(drawBearcat) {
                     drawBearcat = false;
                 }
